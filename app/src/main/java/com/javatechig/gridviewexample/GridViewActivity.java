@@ -145,25 +145,19 @@ public class GridViewActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.popular_movies) {
-            new AsyncHttpTask().execute("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a247f9509512beb8588090c3d377d6c9");
-            return true;
+        switch (item.getItemId()) {
+
+            case R.id.popular_movies:
+                new AsyncHttpTask().execute("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a247f9509512beb8588090c3d377d6c9");
+                break;
+
+            case R.id.highest_rated:
+                new AsyncHttpTask().execute("http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=a247f9509512beb8588090c3d377d6c9");
+                break;
+
         }
-
-        if (id == R.id.highest_rated) {
-            new AsyncHttpTask().execute("http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=a247f9509512beb8588090c3d377d6c9");
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
-
-
 
 }
