@@ -32,6 +32,7 @@ public class GridViewAdapter extends ArrayAdapter<GridItem> {
     public void setGridData(ArrayList<GridItem> mGridData) {
         this.mGridData = mGridData;
         notifyDataSetChanged();
+
     }
 
     @Override

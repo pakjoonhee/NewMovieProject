@@ -147,15 +147,20 @@ public class GridViewActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-
             case R.id.popular_movies:
+                if (mGridData.size() >= 20) {
+                    mGridData.clear();
+                }
                 new AsyncHttpTask().execute("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a247f9509512beb8588090c3d377d6c9");
                 break;
 
+
             case R.id.highest_rated:
+                if (mGridData.size() >= 20) {
+                    mGridData.clear();
+                }
                 new AsyncHttpTask().execute("http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=a247f9509512beb8588090c3d377d6c9");
                 break;
-
         }
         return true;
     }
