@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,16 +45,9 @@ public class GridViewActivity extends ActionBarActivity {
                 GridItem item = (GridItem) parent.getItemAtPosition(position);
 
                 Intent intent = new Intent(GridViewActivity.this, DetailsActivity.class);
-                ImageView imageView = (ImageView) v.findViewById(R.id.grid_item_image);
 
-                int[] screenLocation = new int[2];
-                imageView.getLocationOnScreen(screenLocation);
 
-                intent.putExtra("left", screenLocation[0]).
-                        putExtra("top", screenLocation[1]).
-                        putExtra("width", imageView.getWidth()).
-                        putExtra("height", imageView.getHeight()).
-                        putExtra("title", item.getTitle()).
+                intent.putExtra("title", item.getTitle()).
                         putExtra("image", item.getImage()).
                         putExtra("releaseDate", item.getReleaseDate()).
                         putExtra("rating", item.getRating()).

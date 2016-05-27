@@ -16,10 +16,6 @@ public class DetailsActivity extends ActionBarActivity {
     private TextView movieSynopsis;
     private ImageView imageView;
 
-    private int thumbnailTop;
-    private int thumbnailLeft;
-    private int thumbnailWidth;
-    private int thumbnailHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +26,6 @@ public class DetailsActivity extends ActionBarActivity {
         actionBar.hide();
 
         Bundle bundle = getIntent().getExtras();
-        thumbnailTop = bundle.getInt("top");
-        thumbnailLeft = bundle.getInt("left");
-        thumbnailWidth = bundle.getInt("width");
-        thumbnailHeight = bundle.getInt("height");
 
         String title = bundle.getString("title");
         String image = bundle.getString("image");
