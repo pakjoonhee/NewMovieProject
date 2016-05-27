@@ -18,7 +18,6 @@ import com.squareup.picasso.Picasso;
 
 public class GridViewAdapter extends ArrayAdapter<GridItem> {
 
-    //private final ColorMatrixColorFilter grayscaleFilter;
     private Context mContext;
     private int layoutResourceId;
     private ArrayList<GridItem> mGridData = new ArrayList<GridItem>();
@@ -30,12 +29,6 @@ public class GridViewAdapter extends ArrayAdapter<GridItem> {
         this.mGridData = mGridData;
     }
 
-
-    /**
-     * Updates grid data and refresh grid items.
-     *
-     * @param mGridData
-     */
     public void setGridData(ArrayList<GridItem> mGridData) {
         this.mGridData = mGridData;
         notifyDataSetChanged();

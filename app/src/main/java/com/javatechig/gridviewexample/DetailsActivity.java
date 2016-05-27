@@ -1,17 +1,9 @@
 package com.javatechig.gridviewexample;
 
-import android.animation.ObjectAnimator;
-import android.animation.TimeInterpolator;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
-import android.view.ViewTreeObserver;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,13 +25,10 @@ public class DetailsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Setting details screen layout
         setContentView(R.layout.activity_details_view);
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        //retrieves the thumbnail data
         Bundle bundle = getIntent().getExtras();
         thumbnailTop = bundle.getInt("top");
         thumbnailLeft = bundle.getInt("left");
@@ -52,7 +41,6 @@ public class DetailsActivity extends ActionBarActivity {
         String rating = bundle.getString("rating");
         String synopsis = bundle.getString("synopsis");
 
-        //initialize and set the image description
         titleTextView = (TextView) findViewById(R.id.title);
         titleTextView.setText(Html.fromHtml(title));
 
@@ -66,15 +54,10 @@ public class DetailsActivity extends ActionBarActivity {
         movieSynopsis = (TextView) findViewById(R.id.movieSynopsis);
         movieSynopsis.setText(synopsis);
 
-        //Set image url
         imageView = (ImageView) findViewById(R.id.grid_item_image);
         Picasso.with(this).load(image).into(imageView);
 
 
     }
 
-    /**
-     * The enter animation scales the picture in from its previous thumbnail
-     * size/location.
-     */
 }

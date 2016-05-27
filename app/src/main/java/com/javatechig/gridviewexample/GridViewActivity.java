@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,13 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +25,6 @@ public class GridViewActivity extends ActionBarActivity {
     private static final String TAG = GridViewActivity.class.getSimpleName();
 
     private GridView mGridView;
-    private ProgressBar mProgressBar;
 
     private GridViewAdapter mGridAdapter;
     private ArrayList<GridItem> mGridData;
@@ -44,31 +36,21 @@ public class GridViewActivity extends ActionBarActivity {
         setContentView(R.layout.activity_gridview);
 
         mGridView = (GridView) findViewById(R.id.gridView);
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
-
-        //Initialize with empty data
         mGridData = new ArrayList<>();
         mGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, mGridData);
         mGridView.setAdapter(mGridAdapter);
 
-        //Grid view click event
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                //Get item at position
+
                 GridItem item = (GridItem) parent.getItemAtPosition(position);
 
                 Intent intent = new Intent(GridViewActivity.this, DetailsActivity.class);
                 ImageView imageView = (ImageView) v.findViewById(R.id.grid_item_image);
 
-                // Interesting data to pass across are the thumbnail size/location, the
-                // resourceId of the source bitmap, the picture description, and the
-                // orientation (to avoid returning back to an obsolete configuration if
-                // the device rotates again in the meantime)
-
                 int[] screenLocation = new int[2];
                 imageView.getLocationOnScreen(screenLocation);
 
-                //Pass the image title and url to DetailsActivity
                 intent.putExtra("left", screenLocation[0]).
                         putExtra("top", screenLocation[1]).
                         putExtra("width", imageView.getWidth()).
@@ -79,21 +61,15 @@ public class GridViewActivity extends ActionBarActivity {
                         putExtra("rating", item.getRating()).
                         putExtra("synopsis", item.getSynopsis());
 
-                //Start details activity
                 startActivity(intent);
             }
         });
 
-        //Start download
         new AsyncHttpTask().execute(FEED_URL);
-        mProgressBar.setVisibility(View.VISIBLE);
     }
 
-
-    //Downloading data asynchronously
     public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
         HttpURLConnection connection = null;
-        BufferedReader reader = null;
 
         @Override
         protected Integer doInBackground(String... params) {
@@ -117,7 +93,6 @@ public class GridViewActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(Integer result) {
-            // Download complete. Lets update UI
 
             if (result == 1) {
                 mGridAdapter.setGridData(mGridData);
@@ -125,8 +100,6 @@ public class GridViewActivity extends ActionBarActivity {
                 Toast.makeText(GridViewActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
             }
 
-            //Hide progressbar
-            mProgressBar.setVisibility(View.GONE);
         }
     }
 
@@ -139,18 +112,12 @@ public class GridViewActivity extends ActionBarActivity {
             result += line;
         }
 
-        // Close stream
         if (null != stream) {
             stream.close();
         }
         return result;
     }
 
-    /**
-     * Parsing the feed results and get the list
-     *
-     * @param result
-     */
     private void parseResult(String result) {
         try {
             JSONObject response = new JSONObject(result);

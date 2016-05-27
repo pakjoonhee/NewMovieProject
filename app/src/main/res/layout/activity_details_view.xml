@@ -21,7 +21,7 @@
         android:background="@color/teal"
         android:textColor="@color/white"
         android:fontFamily="sans-serif"
-        android:textSize="35dp"/>
+        android:textSize="35sp"/>
 
     <ImageView
         android:layout_width="170dp"
