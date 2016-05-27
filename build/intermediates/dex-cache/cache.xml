@@ -40,14 +40,14 @@
         jar="/Users/joonheepak/Desktop/Httpstuff/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="21.1.2"
-        sha1="121d9b91e10b0a0eb035e1107f95380b06a1e6a7">
+        sha1="507a40a1f295fa67e6b1475afaa8fc2b2345c7b7">
         <dex dex="/Users/joonheepak/Desktop/Httpstuff/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_11b87b1f49e93c2314ea2c2996a9daaecbcc85f6/classes.dex" />
     </item>
     <item
         jar="/Users/joonheepak/Desktop/Httpstuff/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="21.1.2"
-        sha1="893f65eee265c72914acec3c5e91c5990acb12f4">
+        sha1="82ad91c91c11b8190fbc224ade62ee311c6a55d9">
         <dex dex="/Users/joonheepak/Desktop/Httpstuff/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_32b365b8a8d89bcbd7d703b035efe7d9a4a23afe/classes.dex" />
     </item>
 
