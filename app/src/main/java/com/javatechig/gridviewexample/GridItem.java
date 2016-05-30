@@ -6,6 +6,8 @@ public class GridItem {
     private String releaseDate;
     private String rating;
     private String synopsis;
+    private int id;
+
 
 
     public GridItem() {
@@ -37,4 +39,8 @@ public class GridItem {
     public String getSynopsis() { return synopsis; }
 
     public void setSynopsis(String synopsis) { this.synopsis = synopsis; }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 }

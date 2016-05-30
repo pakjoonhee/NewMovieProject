@@ -52,6 +52,7 @@ public class GridViewActivity extends ActionBarActivity {
                         putExtra("image", item.getImage()).
                         putExtra("releaseDate", item.getReleaseDate()).
                         putExtra("rating", item.getRating()).
+                        putExtra("id", item.getId()).
                         putExtra("synopsis", item.getSynopsis());
 
                 startActivity(intent);
@@ -123,12 +124,14 @@ public class GridViewActivity extends ActionBarActivity {
                 String releaseDate = post.optString("release_date");
                 String rating = post.optString("vote_average");
                 String synopsis = post.optString("overview");
+                int id = post.optInt("id");
                 item = new GridItem();
                 item.setTitle(title);
                 item.setImage(finalImage);
                 item.setReleaseDate(releaseDate);
                 item.setRating(rating);
                 item.setSynopsis(synopsis);
+                item.setId(id);
                 mGridData.add(item);
             }
         } catch (JSONException e) {
