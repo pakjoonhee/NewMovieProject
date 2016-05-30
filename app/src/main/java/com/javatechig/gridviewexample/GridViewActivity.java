@@ -144,6 +144,23 @@ public class GridViewActivity extends ActionBarActivity {
         }
     }
 
+    private void parseId(String result) {
+        try {
+            JSONObject response = new JSONObject(result);
+            JSONArray posts = response.optJSONArray("results");
+            GridItem video;
+            for (int i = 0; i < posts.length(); i++) {
+                JSONObject post = posts.optJSONObject(i);
+                int id = post.optInt("key");
+                video = new GridItem();
+                video.setId(id);
+                mGridData.add(video);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
