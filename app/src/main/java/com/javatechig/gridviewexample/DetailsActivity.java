@@ -34,7 +34,6 @@ public class DetailsActivity extends ActionBarActivity {
         String synopsis = bundle.getString("synopsis");
         int id = bundle.getInt("id");
         String parseTrailer = "http://api.themoviedb.org/3/movie/" + id + "/videos";
-        new GridViewActivity.AsyncHttpTask().execute(parseTrailer);
 
         titleTextView = (TextView) findViewById(R.id.title);
         titleTextView.setText(Html.fromHtml(title));
