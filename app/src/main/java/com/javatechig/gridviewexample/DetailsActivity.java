@@ -32,8 +32,7 @@ public class DetailsActivity extends ActionBarActivity {
         String releaseDate = bundle.getString("releaseDate");
         String rating = bundle.getString("rating");
         String synopsis = bundle.getString("synopsis");
-        int id = bundle.getInt("id");
-        String parseTrailer = "http://api.themoviedb.org/3/movie/" + id + "/videos";
+        String id = bundle.getString("id");
 
         titleTextView = (TextView) findViewById(R.id.title);
         titleTextView.setText(Html.fromHtml(title));

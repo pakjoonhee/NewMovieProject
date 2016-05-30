@@ -52,7 +52,6 @@ public class GridViewActivity extends ActionBarActivity {
                         putExtra("image", item.getImage()).
                         putExtra("releaseDate", item.getReleaseDate()).
                         putExtra("rating", item.getRating()).
-                        putExtra("id", item.getId()).
                         putExtra("synopsis", item.getSynopsis());
 
                 startActivity(intent);
@@ -80,6 +79,9 @@ public class GridViewActivity extends ActionBarActivity {
                 } else if (params[0] == highestRatedUrl) {
                     parseResult(response);
                     result = 1;
+                } else {
+                    parseId(response);
+                    result = 2;
                 }
 
             } catch (Exception e) {
@@ -129,14 +131,12 @@ public class GridViewActivity extends ActionBarActivity {
                 String releaseDate = post.optString("release_date");
                 String rating = post.optString("vote_average");
                 String synopsis = post.optString("overview");
-                int id = post.optInt("id");
                 item = new GridItem();
                 item.setTitle(title);
                 item.setImage(finalImage);
                 item.setReleaseDate(releaseDate);
                 item.setRating(rating);
                 item.setSynopsis(synopsis);
-                item.setId(id);
                 mGridData.add(item);
             }
         } catch (JSONException e) {
@@ -149,11 +149,11 @@ public class GridViewActivity extends ActionBarActivity {
             JSONObject response = new JSONObject(result);
             JSONArray posts = response.optJSONArray("results");
             GridItem video;
-            for (int i = 0; i < posts.length(); i++) {
+            for (int i = 0; i < posts.length() && i <= 2; i++) {
                 JSONObject post = posts.optJSONObject(i);
                 int id = post.optInt("key");
                 video = new GridItem();
-                video.setId(id);
+                video.setId("http://api.themoviedb.org/3/movie/" + id + "/videos");
                 mGridData.add(video);
             }
         } catch (JSONException e) {
