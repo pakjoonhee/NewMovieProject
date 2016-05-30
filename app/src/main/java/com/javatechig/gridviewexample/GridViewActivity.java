@@ -24,11 +24,11 @@ import org.json.JSONObject;
 
 public class GridViewActivity extends ActionBarActivity {
     private static final String TAG = GridViewActivity.class.getSimpleName();
-
     private GridView mGridView;
-
     private GridViewAdapter mGridAdapter;
     private ArrayList<GridItem> mGridData;
+    private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
+    private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,7 @@ public class GridViewActivity extends ActionBarActivity {
                 InputStream stream = connection.getInputStream();
 
                 String response = streamToString(stream);
+
                 parseResult(response);
                 result = 1;
 
@@ -141,7 +142,7 @@ public class GridViewActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -154,7 +155,7 @@ public class GridViewActivity extends ActionBarActivity {
                 if (mGridData.size() >= 20) {
                     mGridData.clear();
                 }
-                new AsyncHttpTask().execute("http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9");
+                new AsyncHttpTask().execute(popularMoviesUrl);
                 break;
 
 
@@ -162,7 +163,7 @@ public class GridViewActivity extends ActionBarActivity {
                 if (mGridData.size() >= 20) {
                     mGridData.clear();
                 }
-                new AsyncHttpTask().execute("http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9");
+                new AsyncHttpTask().execute(highestRatedUrl);
                 break;
         }
         return true;

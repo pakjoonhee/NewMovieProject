@@ -18,7 +18,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/DetailsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/DetailsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/GridViewActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/GridViewActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="Httpstuff.iws" />
@@ -63,12 +63,12 @@
       <file leaf-file-name="GridViewActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/GridViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51039696">
-              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+            <state vertical-scroll-proportion="1.2192817">
+              <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1368#2109#0" expanded="true" />
-                <element signature="e#2108#2109#0" expanded="true" />
+                <element signature="e#1615#2356#0" expanded="true" />
+                <element signature="e#2355#2356#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1668,8 +1668,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_details_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/GridItem.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/GridViewActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/DetailsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/GridViewActivity.java" />
       </list>
     </option>
   </component>
@@ -2217,8 +2217,8 @@
           <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1368#2109#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
+            <element signature="e#1615#2356#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2300,8 +2300,8 @@
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1368#2109#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
+            <element signature="e#1615#2356#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2388,8 +2388,8 @@
           <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1368#2109#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
+            <element signature="e#1615#2356#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2568,12 +2568,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/javatechig/gridviewexample/GridViewActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51039696">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+        <state vertical-scroll-proportion="1.2192817">
+          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1368#2109#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
+            <element signature="e#1615#2356#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
           </folding>
         </state>
       </provider>
