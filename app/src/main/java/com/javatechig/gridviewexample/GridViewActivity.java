@@ -74,9 +74,13 @@ public class GridViewActivity extends ActionBarActivity {
                 InputStream stream = connection.getInputStream();
 
                 String response = streamToString(stream);
-
-                parseResult(response);
-                result = 1;
+                if (params[0] == popularMoviesUrl) {
+                    parseResult(response);
+                    result = 1;
+                } else if (params[0] == highestRatedUrl) {
+                    parseResult(response);
+                    result = 1;
+                }
 
             } catch (Exception e) {
                 Log.d(TAG, e.getLocalizedMessage());
