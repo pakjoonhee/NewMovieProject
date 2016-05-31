@@ -6,7 +6,7 @@ public class GridItem {
     private String releaseDate;
     private String rating;
     private String synopsis;
-    private String id;
+    private int id;
 
 
 
@@ -40,7 +40,7 @@ public class GridItem {
 
     public void setSynopsis(String synopsis) { this.synopsis = synopsis; }
 
-    public String getId() { return id; }
+    public int getId() { return id; }
 
-    public void setId(String id) { this.id = id; }
+    public void setId(int id) { this.id = id; }
 }

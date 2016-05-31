@@ -33,6 +33,9 @@ public class DetailsActivity extends ActionBarActivity {
         String rating = bundle.getString("rating");
         String synopsis = bundle.getString("synopsis");
         String id = bundle.getString("id");
+        
+        GridViewActivity outer = new GridViewActivity();
+        outer.new AsyncHttpTask(param).execute()
 
         titleTextView = (TextView) findViewById(R.id.title);
         titleTextView.setText(Html.fromHtml(title));
